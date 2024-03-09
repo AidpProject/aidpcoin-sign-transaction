@@ -1,16 +1,16 @@
 const bitcoin = require("bitcoinjs-lib");
 const coininfo = require("coininfo");
 
-const RAVENCOIN = coininfo.ravencoin.main.toBitcoinJS();
-const { getRPC, methods } = require("@ravenrebels/ravencoin-rpc");
+const AIDPCOIN = coininfo.ravencoin.main.toBitcoinJS();
+const { getRPC, methods } = require("@aidpproject/aidpcoin-rpc");
 
 const full = require("./mock/full.json").debug;
-const UTXOs = full.rvnUTXOs.concat(full.assetUTXOs);
+const UTXOs = full.aidpUTXOs.concat(full.assetUTXOs);
 
 const txHex = full.rawUnsignedTransaction;
 const tx = bitcoin.Transaction.fromHex(txHex);
 
-const txb = bitcoin.TransactionBuilder.fromTransaction(tx, RAVENCOIN);
+const txb = bitcoin.TransactionBuilder.fromTransaction(tx, AIDPCOIN);
 
 function getUTXO(transactionId, index) {
   return UTXOs.find((utxo) => {
@@ -39,7 +39,7 @@ for (let i = 0; i < tx.ins.length; i++) {
 
 const signedTxHex = txb.build().toHex();
 
-const rpc = getRPC("anon", "anon", "https://rvn-rpc-mainnet.ting.finance/rpc");
+const rpc = getRPC("anon", "anon", "https://aidp-rpc-mainnet.ting.finance/rpc");
 
 async function main() {
   const decoded = await rpc(methods.decoderawtransaction, [signedTxHex]);
@@ -58,6 +58,6 @@ main();
 
 function getKeyPairByAddress(address) {
   const wif = full.privateKeys[address];
-  const keyPair = bitcoin.ECPair.fromWIF(wif, RAVENCOIN);
+  const keyPair = bitcoin.ECPair.fromWIF(wif, AIDPCOIN);
   return keyPair;
 }
