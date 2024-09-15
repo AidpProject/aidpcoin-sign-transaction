@@ -1,7 +1,7 @@
 const bitcoin = require("bitcoinjs-lib");
 const coininfo = require("coininfo");
 
-const AIDPCOIN = coininfo.ravencoin.main.toBitcoinJS();
+const AIDPCOIN = coininfo.aidpcoin.main.toBitcoinJS();
 const { getRPC, methods } = require("@aidpproject/aidpcoin-rpc");
 
 const full = require("./mock/full.json").debug;
@@ -39,7 +39,7 @@ for (let i = 0; i < tx.ins.length; i++) {
 
 const signedTxHex = txb.build().toHex();
 
-const rpc = getRPC("anon", "anon", "https://aidp-rpc-mainnet.ting.finance/rpc");
+const rpc = getRPC("anon", "anon", "http://127.0.0.1:18001");
 
 async function main() {
   const decoded = await rpc(methods.decoderawtransaction, [signedTxHex]);

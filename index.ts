@@ -1,5 +1,5 @@
 const bitcoin = require("bitcoinjs-lib");
-import { chains, toBitcoinJS } from "@hyperbitjs/chains";
+import { chains, toBitcoinJS } from "@aidpproject/chains";
 
 interface IUTXO {
   address: string;
@@ -34,7 +34,7 @@ export function sign(
   }
 
   //@ts-ignore
-  const RAVENCOIN = toBitcoinJS(coin);
+  const AIDPCOIN = toBitcoinJS(coin);
 
   const tx = bitcoin.Transaction.fromHex(rawTransactionHex);
   const txb = bitcoin.TransactionBuilder.fromTransaction(tx, AIDPCOIN);

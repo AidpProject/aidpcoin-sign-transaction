@@ -1,6 +1,6 @@
 import {Buffer as $hCgyA$Buffer} from "buffer";
 import {Transaction as $hCgyA$Transaction, TransactionBuilder as $hCgyA$TransactionBuilder, ECPair as $hCgyA$ECPair} from "bitcoinjs-lib";
-import {chains as $hCgyA$chains, toBitcoinJS as $hCgyA$toBitcoinJS} from "@hyperbitjs/chains";
+import {chains as $hCgyA$chains, toBitcoinJS as $hCgyA$toBitcoinJS} from "@aidpproject/chains";
 
 
 

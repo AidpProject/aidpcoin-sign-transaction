@@ -1,7 +1,7 @@
 {
   "name": "@aidpproject/aidpcoin-sign-transaction",
   "description": "Signs a Aidpcoin transaction",
-  "version": "0.2.12",
+  "version": "0.2.16",
   "source": "index.ts",
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
@@ -16,7 +16,7 @@
     "url": "git+https://github.com/aidpproject/aidpcoin-sign-transaction.git"
   },
   "keywords": [
-    "ravencoin"
+    "aidpcoin"
   ],
   "author": "Raven Rebels - Dick Henrik Larsson",
   "license": "MIT",
@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/aidpproject/aidpcoin-sign-transaction#readme",
   "dependencies": {
-    "@hyperbitjs/chains": "^0.3.1",
+    "@aidpproject/chains": "^1.6.1",
     "bitcoinjs-lib": "^5.2.0"
   },
   "devDependencies": {
