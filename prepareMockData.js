@@ -5,7 +5,7 @@ const full = require("./mock/full.json");
 const unsigned = full.debug.rawUnsignedTransaction;
 const signed = full.debug.signedTransaction.hex;
 const privateKeys = full.debug.privateKeys;
-const rpc = getRPC("anon", "anon", "http://127.0.0.1:18001");
+const rpc = getRPC("anon", "anon", "http://127.0.0.1:9999/rpc");
 
 rpc(methods.decoderawtransaction, [unsigned]).then((data) => {
   const filename = "./mock/decodedUnsignedTransaction.json";
