@@ -39,7 +39,7 @@ for (let i = 0; i < tx.ins.length; i++) {
 
 const signedTxHex = txb.build().toHex();
 
-const rpc = getRPC("anon", "anon", "http://127.0.0.1:9999/rpc");
+const rpc = getRPC("anon", "anon", "https://aidp-rpc-mainnet.ai-depin.org/rpc");
 
 async function main() {
   const decoded = await rpc(methods.decoderawtransaction, [signedTxHex]);
@@ -51,7 +51,7 @@ async function main() {
   );
 }
 
-main()
+main();
 //const signedTxHex = txb.build().toHex();
 // Broadcast this signed raw transaction
 //console.log(signedTxHex);
